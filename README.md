@@ -45,9 +45,8 @@ Prerequisites:
   
 *VirtualBox disk image acquisition*
 - Identify the VM's UUID: *vboxmanage list vms*
-- Identify the VM's disk UUID: *vboxmanage showvminfo <VM_UUID>
--- Note the UUID of the disk in row *IDE Controller*
-- Export the disk using the disk UUID into RAW format: vboxmanage clonemedium disk <disk_UUID> --format raw win10-disk.raw 
+- Identify the VM's disk UUID: *vboxmanage showvminfo <VM_UUID>* Note the UUID of the disk in row *IDE Controller*
+- Export the disk using the disk UUID into RAW format: *vboxmanage clonemedium disk <disk_UUID> --format raw win10-disk.raw*
   
 5) Validate integrity of memory and disk images by creating SHA1 hashes and saving them in a text file along with the images.
   
