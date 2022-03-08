@@ -12,6 +12,10 @@ Prerequisites:
   - Import into VirtualBox and **take a snapshot before the first start**
   - Start and log in to the VM. Credentials: "IEUser" and "Passw0rd!"
   - **Disable all Defender settings**: Go to "Virus & threat protection settings" -> Manage settings -> Disable all the features
+  - Optional: Install Sysmon for detailed event logging.
+    -- Download Sysmon: https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
+    -- Download Sysmon config script: https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml
+    -- Install Sysmon: Open cmd as administrator and run `sysmon64 -i sysmonconfig-export.xml`
 
 2) Execute the attack script on the target system
   - Download the script: PWF/AtomicRedTeam/ART-attack.ps1 onto the system
