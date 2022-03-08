@@ -15,7 +15,8 @@ Prerequisites:
 
 2) Execute the attack script on the target system
   - Download the script: PWF/AtomicRedTeam/ART-attack.ps1 onto the system
-  - Run PowerShell **as administrator!**, navigate to the script and execute it
+  - Run PowerShell **as administrator!**, navigate to the script and execute it. 
+    -- Ensure that the system has internet access as it will download AtomicRedTeam. Furthermore, press [Y] Yes if PowerShell asks for installing additional features.
   - Verify that the powershell logs show successful executions of atomics. (If unsuccessful shut down the VM, revert to the previous snapshot and implement fixes before running the script again.)
   - Do **not close any windows or processes** and proceed to the next step!
 
