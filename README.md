@@ -31,8 +31,8 @@ Prerequisites:
 
 *VirtualBox memory acquisition*
   - Open your terminal (Mac/Linux) or cmd (Windows) to run *vboxmanage* (in Windows it is located under C:\Program Files\Oracle\VirtualBox)
-  - Identify the VM's UUID: *vboxmanage list vms*
-  - Create a snapshot of the VM's memory: vboxmanage debugvm <UUID> dumpvmcore --filename win10.raw
+  - Identify the VM's UUID: `vboxmanage list vms`
+  - Create a snapshot of the VM's memory: `vboxmanage debugvm <VM_UUID> dumpvmcore --filename win10-mem.raw`
   
 4) Take an image of the VM disk
   - Unpause / Resume the VM
@@ -45,14 +45,15 @@ Prerequisites:
   
 *VirtualBox disk image acquisition*
   - Open terminal or cmd
-  - Identify the VM's UUID: *vboxmanage list vms*
-  - Identify the VM's disk UUID: *vboxmanage showvminfo <VM_UUID>* Note the UUID of the disk in row *IDE Controller*
-  - Export the disk using the disk UUID into RAW format: *vboxmanage clonemedium disk <disk_UUID> --format raw win10-disk.raw*
+  - Identify the VM's UUID: `vboxmanage list vms`
+  - Identify the VM's disk UUID: `vboxmanage showvminfo <VM_UUID>` Note the UUID of the disk in row *IDE Controller*
+  - Export the disk using the disk UUID into RAW format: `vboxmanage clonemedium disk <disk_UUID> --format raw win10-disk.raw`
   
 5) Validate integrity of memory and disk images by creating SHA1 hashes and saving them in a text file along with the images.
   
-*Windows*: Open PowerShell and navigate to the folder. Obtain hashes by executing: *Get-FileHash -Algorithm SHA1 <file>*
-*Mac/Linux*: Open terminal and navigate to the folder. Obtain hashes by executing: *shasum <file>*
+*Windows*: Open PowerShell and navigate to the folder. Obtain hashes by executing: `Get-FileHash -Algorithm SHA1 <file>`
+ 
+*Mac/Linux*: Open terminal and navigate to the folder. Obtain hashes by executing: `shasum <file>`
   
 ## Forensic analysis
   
