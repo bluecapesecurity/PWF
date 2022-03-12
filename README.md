@@ -1,6 +1,6 @@
 # PWF - Practical Windows Forensics
 
-Goals: Perform a forensic analysis using the most open source tools on a Windows 10 system. Before the analysis you need prepare a target system and run an attack simulation script. We'll then go through data acquisition and evidence handling steps before setting up a forensic VM to investigate the system. 
+Goals: Perform a forensic analysis on a Windows 10 system using the most common open source tools. Before the analysis you need prepare a "victim / target" system and run an attack simulation script. We'll then go through data acquisition and evidence handling steps before setting up a forensic VM to investigate the system. 
 
 Prerequisites:
   * Install VirtualBox (preferred) or VMWare hypervisor. See: https://bluecapesecurity.com/build-your-lab/virtualization/
@@ -9,7 +9,7 @@ Prerequisites:
       * Enough disk storage for 2 x Windows 10 VMs using about 40 GB each. Additionally, you'll need roughly around twice the amount for handling disk images, memory images and additional artifacts. 160GB+ free space is ideal. 
 
 ## Prepare Target System
-1) Install a free Windows 10 "victim / target" system that can be used for executing an attack and performing the investigation on
+1) Install a free Windows 10 target system that can be used for executing an attack and performing the investigation on
 * Download: https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
 * Import into VirtualBox and **take a snapshot before the first start**
 * Start and log in to the VM. Credentials: "IEUser" and "Passw0rd!"
