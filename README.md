@@ -86,9 +86,12 @@ The attack script in this repo can be used to create a realistic compromise scen
 
 With the forensic workstation installed and the evidence created, we can now beginn with the analysis of the memory and disk images. 
 
+:fire:**The full course is currently under development**:fire:
+
+*Early access to the course and mentoring may be available to the right candidates. Check out and subscribe at [BlueCapeSecurity](www.bluecapesecurity.com).*
+
 Happy forensicating!
 
   
-Copyright © 2022 BlueCapeSecurity
-www.bluecapesecurity.com
+Copyright © 2022 [BlueCapeSecurity](www.bluecapesecurity.com)
   
