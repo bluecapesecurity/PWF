@@ -1,12 +1,17 @@
 # PWF - Practical Windows Forensics
 
-Goals: Perform a forensic analysis on a Windows 10 system using the most common open source tools. Before the analysis you need prepare a "victim / target" system and run an attack simulation script. We'll then go through data acquisition and evidence handling steps before setting up a forensic VM to investigate the system. 
+The purpose of this repo is to provide a guide for quickly createing a realistic compromise scenario on a Windows 10 virtual machine, by leveraging the ![Atomic Red Team Framework](https://github.com/redcanaryco/atomic-red-team). Following, the guide describes steps for acquiring memory and disk images of the compromised VM from VirtualBox and VMWare hypervisors, respectively. Finally, it discusses best practices for setting up an effective forensic workstation, based on Windows and a Linux subsytem, to perform forensic analysis of the compromised system.
 
 Prerequisites:
-  * Install VirtualBox (preferred) or VMWare hypervisor. See: https://bluecapesecurity.com/build-your-lab/virtualization/
+  * VirtualBox or VMWare hypervisor. See: https://bluecapesecurity.com/build-your-lab/virtualization/
   * Host system: 
       * Enough RAM for running 2 x Windows 10 VMs with 4GB RAM each (this does not have to be at the same time)
-      * Enough disk storage for 2 x Windows 10 VMs using about 40 GB each. Additionally, you'll need roughly around twice the amount for handling disk images, memory images and additional artifacts. 160GB+ free space is ideal. 
+      * Enough disk storage for 2 x Windows 10 VMs using about 40 GB each. Additionally, you'll need roughly around twice the amount for handling disk images, memory images and additional artifacts. 100GB+ free space altogether is ideal. 
+
+## Compromise Scenario
+The attack script in this repo can be useed to create a realistic compromise scenario on a Windows system. It leverages selected Atomic Red Team tests that simulate commonly observed techniques in real world attacks. Techniques used in this script are highlited the MITRE ATT&CK framwork below:
+
+![Attack Script](AtomicRedTeam/PWF_Analysis-MITRE.svg)
 
 ## Prepare Target System
 1) Install a free Windows 10 target system that can be used for executing an attack and performing the investigation on
@@ -27,13 +32,14 @@ Prerequisites:
     * Verify that the powershell logs show successful executions of atomics. (If unsuccessful shut down the VM, revert to the previous snapshot and implement fixes before running the script again.)
     * Do **not close any windows or processes** and proceed to the next step!
 
-## Data Acquisition 
+## Disk and Memory - Data Acquisition 
 3) Take an image of the VM memory
+* Create an "evidence" folder on the host system to store the following disk and memory images.
 * In your hypervisor suspend or pause the VM
 
 *VMWare memory acquisition*
   - Open the *.vmwarevm* directory of the VM in a terminal
-  - Copy the .vmem file to a location that can be used for analysis later
+  - Copy the .vmem file your evidence folder
 
 *VirtualBox memory acquisition*
 * Open your terminal (Mac/Linux) or cmd (Windows) to run *vboxmanage* (in Windows it is located under C:\Program Files\Oracle\VirtualBox)
@@ -45,9 +51,11 @@ Prerequisites:
 * Shutdown the Windows VM (this ensures updates from memory are written to the  system)
 
 *VMWare disk image acquisition* 
-* Locate the VMDK split files in the VM's directory. These are all the files ending with *.vmdk*.
+* Locate the VMDK split files in the VM's directory. These are all files ending with *.vmdk*.
     * Depending on the number of snapshots there could be several versions of VMDK file sequences. In that case the sequence with the highest number in the name will be the one with the latest status e.g. as in "Virtual Disk-XXX.vmdk"
-* Copy all the split files of the latest sequence "Virtual Disk-xxx.vmdk" to "Virtual Disk-xxx-s0016.vmdk". 
+* Export the vmdk image. There are two options:
+    * Copy all the split files of the latest sequence "Virtual Disk-xxx.vmdk" to "Virtual Disk-xxx-s0016.vmdk" into your evidence folder. 
+    * Alternatively, create a single VMDK from split files: `C:\Program Files (x86)\VMware\VMware Player\vmware-vdiskmanager.exe» -r «d:\VMLinux\vmdkname.vmdk» -t 0 MyNewImage.vmdk`
   
 *VirtualBox disk image acquisition*
 * Open terminal or cmd
@@ -61,17 +69,23 @@ Prerequisites:
  
 *Mac/Linux*: Open terminal and navigate to the folder. Obtain hashes by executing: `shasum <file>`
   
-## Forensic analysis
+## Set up Your Forensic Workstation
 6) Set up a forensic VM as outlined in the following link: https://bluecapesecurity.com/build-your-forensic-workstation/
-* Install the following tools: 
-    * Ubuntu Windows subsystem for Linux, Volatility
-    * Arsenal Image Mounter, FTK Imager, Eric Zimmerman Tools, RegRipper, Notepad++
-  
-Take snapshots !
-  
-to be continued...
-  
-  
+* It is recommended to install a Windows 2019 Server VM from the Microsoft Evaluation Center.
+    * Create a new VM in Virtualbox. Assign at least **4 GB of RAM and 80 GB of disk storage with the dynamically allocated option** selected. This means the disk will start small (e.g. basic size of Windows 10-20 GB in size) and grows as we add more data. 
+    * Install VirtualBox Guest Additions and enable shared clipboard and file sharing with the evidence folder on the host system.
+    * When the Windows system is installed, follow the instructions in the section "Configure the Windows Environment – DFIR Best Practices".
+* When the setup is complete, install the following tools: 
+    * Kali Linux subsystem, Volatility
+    * Arsenal Image Mounter, FTK Imager, Eric Zimmerman Tools, RegRipper, EventLog Explorer, Notepad++
+* Take a snapshot once the setup is complete. 
+
+## Forensic Analysis
+
+With the forensic workstation installed and the evidence created, we can now beginn with the analysis of the memory and disk images. 
+
+Happy forensicating!
+
   
 Copyright © 2022 BlueCapeSecurity
 www.bluecapesecurity.com
