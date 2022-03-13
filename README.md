@@ -4,6 +4,13 @@
 
 The purpose of this repo is to provide a quick solution to create a realistic attack scenario on a Windows system and getting everything set up for performing forensic analysis. You'll start with setting up a taret system and running the attack script on it, which leverages the [Atomic Red Team Framework](https://github.com/redcanaryco/atomic-red-team) to simulate realistic attack techniques. Following, the guide describes steps for acquiring memory and disk images of the compromised VM for VirtualBox and VMWare hypervisors. Finally, it discusses best practices for setting up an effective forensic workstation, based on Windows and a Linux subsytem, to perform forensic analysis on the evidence created from the compromised system.
 
+*Steps TLDR;*
+* Prepare a Windows target VM
+* Execute attack script on target VM
+* Acquire memory and disk images 
+* Setup a Windows forensic VM
+* Get started with your Windows forensic analylsis
+
 Prerequisites:
   * VirtualBox or VMWare hypervisor. See: https://bluecapesecurity.com/build-your-lab/virtualization/
   * Host system: 
