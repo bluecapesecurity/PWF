@@ -13,7 +13,7 @@ Prerequisites:
 ### Attack Scenario
 The attack script in this repo can be used to create a realistic compromise scenario on a Windows system. It leverages selected Atomic Red Team tests that simulate commonly observed techniques in real world attacks. The script `PWF/AtomicRedTeam/ART-attack.ps1` first installs [Invoke-AtomicRedTeam](https://github.com/redcanaryco/invoke-atomicredteam) and then executes a number of techniques. The techniques executed in this script are highlited the MITRE ATT&CK framwork below.
 
-![Attack Script](AtomicRedTeam/PWF_Analysis-MITRE.svg)
+![Attack Script](AtomicRedTeam/PWF_Analysis-MITRE.png)
 ## Preparation
 ### Prepare Target System
 1) Download, import and configure the free Windows 10 test VM from the Microsoft developer site
