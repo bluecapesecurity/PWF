@@ -1,5 +1,6 @@
 # Practical Windows Forensics
 
+*The DIY purple teaming approach for learning digital forensics on Windows systems*
 The purpose of this repo is to provide a quick solution to create a realistic attack scenario on a Windows system and getting everything set up for performing forensic analysis. You'll start with setting up a taret system and running the attack script on it, which leverages the [Atomic Red Team Framework](https://github.com/redcanaryco/atomic-red-team) to simulate realistic attack techniques. Following, the guide describes steps for acquiring memory and disk images of the compromised VM for VirtualBox and VMWare hypervisors. Finally, it discusses best practices for setting up an effective forensic workstation, based on Windows and a Linux subsytem, to perform forensic analysis on the evidence created from the compromised system.
 
 Prerequisites:
