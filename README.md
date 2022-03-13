@@ -88,10 +88,10 @@ With the forensic workstation installed and the evidence created, we can now beg
 
 :fire:**The full course is currently under development**:fire:
 
-*Early access to the course and mentoring may be available to the right candidates. Check out and subscribe at [BlueCapeSecurity](www.bluecapesecurity.com).*
+*Early access to the course and mentoring may be available to the right candidates. Check out and subscribe at [BlueCapeSecurity](https://www.bluecapesecurity.com).*
 
 Happy forensicating!
 
   
-Copyright © 2022 [BlueCapeSecurity](www.bluecapesecurity.com)
+Copyright © 2022 [BlueCapeSecurity](https://www.bluecapesecurity.com)
   
