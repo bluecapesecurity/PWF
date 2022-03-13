@@ -1,6 +1,6 @@
-# PWF - Practical Windows Forensics
+# Practical Windows Forensics
 
-The purpose of this repo is to provide a guide for quickly creating a realistic compromise scenario on a Windows 10 virtual machine, by leveraging the [Atomic Red Team Framework](https://github.com/redcanaryco/atomic-red-team). Following, the guide describes steps for acquiring memory and disk images of the compromised VM from VirtualBox and VMWare hypervisors, respectively. Finally, it discusses best practices for setting up an effective forensic workstation, based on Windows and a Linux subsytem, to perform forensic analysis of the compromised system.
+The purpose of this repo is to provide a quick solution to create a realistic attack scenario on a Windwos system and getting everything set up for performing forensic analysis. You'll start with setting up a taret system and running the attack script on it, which leverages the [Atomic Red Team Framework](https://github.com/redcanaryco/atomic-red-team) to simulate realistic attack techniques. Following, the guide describes steps for acquiring memory and disk images of the compromised VM for VirtualBox and VMWare hypervisors. Finally, it discusses best practices for setting up an effective forensic workstation, based on Windows and a Linux subsytem, to perform forensic analysis on the evidence created from the compromised system.
 
 Prerequisites:
   * VirtualBox or VMWare hypervisor. See: https://bluecapesecurity.com/build-your-lab/virtualization/
@@ -8,12 +8,12 @@ Prerequisites:
       * Enough RAM for running 2 x Windows 10 VMs with 4GB RAM each (this does not have to be at the same time)
       * Enough disk storage for 2 x Windows 10 VMs using about 40 GB each. Additionally, you'll need roughly around twice the amount for handling disk images, memory images and additional artifacts. 100GB+ free space altogether is ideal. 
 
-## Attack Scenario
+### Attack Scenario
 The attack script in this repo can be used to create a realistic compromise scenario on a Windows system. It leverages selected Atomic Red Team tests that simulate commonly observed techniques in real world attacks. The script `PWF/AtomicRedTeam/ART-attack.ps1` first installs [Invoke-AtomicRedTeam](https://github.com/redcanaryco/invoke-atomicredteam) and then executes a number of techniques. The techniques executed in this script are highlited the MITRE ATT&CK framwork below.
 
 ![Attack Script](AtomicRedTeam/PWF_Analysis-MITRE.svg)
-
-## Prepare Target System
+## Preparation
+### Prepare Target System
 1) Download, import and configure the free Windows 10 test VM from the Microsoft developer site
   * Download: https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
   * Import into VirtualBox and **take a snapshot before the first start**. This allows rolling back after the attack or the VM expired.
@@ -32,7 +32,7 @@ The attack script in this repo can be used to create a realistic compromise scen
     * Verify that the powershell logs show successful executions of atomics. (If unsuccessful shut down the VM, revert to the previous snapshot and implement fixes before running the script again.)
     * Do **not close any windows or processes** and proceed to the next step!
 
-## Disk and Memory - Data Acquisition 
+### Disk and Memory - Data Acquisition 
 3) Take an image of the VM memory
 * Create an "evidence" folder on the host system to store the following disk and memory images.
 * In your hypervisor suspend or pause the VM
@@ -69,7 +69,7 @@ The attack script in this repo can be used to create a realistic compromise scen
  
 *Mac/Linux*: Open terminal and navigate to the folder. Obtain hashes by executing: `shasum <file>`
   
-## Set up Your Forensic Workstation
+### Set up Your Forensic Workstation
 6) Set up a forensic VM as outlined in the following link: https://bluecapesecurity.com/build-your-forensic-workstation/
 * It is recommended to install a Windows 2019 Server VM from the Microsoft Evaluation Center.
     * Create a new VM in Virtualbox. Assign at least **4 GB of RAM and 80 GB of disk storage with the dynamically allocated option** selected. This means the disk will start small (e.g. basic size of Windows 10-20 GB in size) and grows as we add more data. 
