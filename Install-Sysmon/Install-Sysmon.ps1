@@ -1,58 +1,68 @@
-<#
-.SYNOPSIS
-Install-Sysmon downloads the Sysmon executables archive and installs Sysmon64.exe
-with a configuration file.
-.DESCRIPTION
-PowerShell script or module to install Sysmon with configuration 
-.PARAMETER path
-The path to the working directory.  Default is user Documents.
-.EXAMPLE
-Install-Sysmon -path C:\Users\example\Desktop
-#>
+# Author: Roberto Rodriguez (@Cyb3rWard0g)
+# License: GPL-3.0
+
+# References:
+# https://medium.com/@cosmin.ciobanu/enhanced-endpoint-detection-using-sysmon-and-wef-3b65d491ff95
+
+# Modified by BlueCapeSecurity
+# - Changed config to SwiftOnSecurity
 
 [CmdletBinding()]
-
-#Establish parameters for path
 param (
-    [string]$path=[Environment]::GetFolderPath("Desktop")   
+    [string]$SysmonConfigUrl = "https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml"
 )
 
-#Test path and create it if required
+write-host "[+] Processing Sysmon Installation.."
 
-If(!(test-path $path))
+$URL = "https://download.sysinternals.com/files/Sysmon.zip"
+Resolve-DnsName download.sysinternals.com
+Resolve-DnsName github.com
+Resolve-DnsName raw.githubusercontent.com
+
+$OutputFile = Split-Path $Url -leaf
+$File = "C:\ProgramData\$OutputFile"
+
+# Download File
+write-Host "[+] Downloading $OutputFile .."
+$wc = new-object System.Net.WebClient
+$wc.DownloadFile($Url, $File)
+if (!(Test-Path $File)) { Write-Error "File $File does not exist" -ErrorAction Stop }
+
+# Decompress if it is zip file
+if ($File.ToLower().EndsWith(".zip"))
 {
-	Write-Information -MessageData "Path does not exist.  Creating Path..." -InformationAction Continue;
-	New-Item -ItemType Directory -Force -Path $path | Out-Null;
-	Write-Information -MessageData "...Complete" -InformationAction Continue
+    # Unzip file
+    write-Host "  [+] Decompressing $OutputFile .."
+    $UnpackName = (Get-Item $File).Basename
+    $SysmonFolder = "C:\ProgramData\$UnpackName"
+    $SysmonBinary = "$SysmonFolder\Sysmon.exe"
+    expand-archive -path $File -DestinationPath $SysmonFolder
+    if (!(Test-Path $SysmonFolder)) { Write-Error "$File was not decompressed successfully" -ErrorAction Stop }
 }
 
-Set-Location $path
+# Downloading Sysmon Configuration
+write-Host "[+] Downloading Sysmon config.."
+$SysmonFile = "C:\ProgramData\sysmon.xml"
+$wc.DownloadFile($SysmonConfigUrl, $SysmonFile)
+if (!(Test-Path $SysmonFile)) { Write-Error "File $SysmonFile does not exist" -ErrorAction Stop }
 
-Write-Host "Location set $path"
+# Installing Sysmon
+write-Host "[+] Installing Sysmon.."
+& $SysmonBinary -i C:\ProgramData\sysmon.xml -accepteula
 
-Write-Host "Retrieving Sysmon..."
+write-Host "[+] Setting Sysmon to start automatically.."
+& sc.exe config Sysmon start= auto
 
-Invoke-WebRequest -Uri https://download.sysinternals.com/files/Sysmon.zip -Outfile Sysmon.zip
-Start-Sleep -s 1
-Write-Host "Sysmon Retrived"
+# Setting Sysmon Channel Access permissions
+write-Host "[+] Setting up Channel Access permissions for Microsoft-Windows-Sysmon/Operational "
+wevtutil set-log Microsoft-Windows-Sysmon/Operational /ca:'O:BAG:SYD:(A;;0xf0005;;;SY)(A;;0x5;;;BA)(A;;0x1;;;S-1-5-32-573)(A;;0x1;;;NS)'
+#New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\Microsoft-Windows-Sysmon/Operational" -Name "ChannelAccess" -PropertyType String -Value "O:BAG:SYD:(A;;0xf0005;;;SY)(A;;0x5;;;BA)(A;;0x1;;;S-1-5-32-573)(A;;0x1;;;NS)" -Force
 
-Write-Host "Unzip Sysmon..."
+write-Host "[+] Restarting Sysmon .."
+Restart-Service -Name Sysmon -Force
 
-Expand-Archive Sysmon.zip
-
-Set-Location $path\Sysmon
-Start-Sleep -s 1
-Write-Host "Unzip Complete."
-
-
-Write-Host "Retrieving Configuration File..."
-
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -Outfile sysmonconfig-export.xml
-Start-Sleep -s 1
-Write-Host "Configuration File Retrieved."
-
-Write-Host "Installing Sysmon..."
-Start-Sleep -s 1
-.\sysmon64.exe -accepteula -i sysmonconfig-export.xml
-
-Write-Host "Sysmon Installed!"
+write-Host "  [*] Verifying if Sysmon is running.."
+$s = Get-Service -Name Sysmon
+while ($s.Status -ne 'Running') { Start-Service Sysmon; Start-Sleep 3 }
+Start-Sleep 5
+write-Host "  [*] Sysmon is running.."
