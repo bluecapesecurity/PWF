@@ -29,14 +29,13 @@ The attack script in this repo can be used to create a realistic compromise scen
   * Start and log in to the VM. Credentials: "IEUser" and "Passw0rd!"
   * Pause Windows Updates to avoid additional noise: Go to Settings -> Windows Update -> Advanced Options -> Pause updates
   * Install Sysmon for detailed event logging.
-      * Download Sysmon: https://docs.microsoft.com/en-us/sysinternals/downloads/sysmon
-      * Download Sysmon config script: https://github.com/SwiftOnSecurity/sysmon-config/blob/master/sysmonconfig-export.xml
-      * Install Sysmon: Open cmd as administrator and run `sysmon64 -i sysmonconfig-export.xml`
+      * Download the script in `PWF/Install-Sysmon/Install-Sysmon.ps1` onto the system
+      * Run PowerShell **as administrator**, navigate to the script and execute it `.\Install-Sysmon.ps1`
   * **Disable all Defender settings**: Before executing the attack, go to "Virus & threat protection settings" -> Manage settings -> Disable all the features
 
 2) Execute the attack script on the target system
 * Download the script in `PWF/AtomicRedTeam/ART-attack.ps1` onto the system
-* Run PowerShell **as administrator!**, navigate to the script and :fire: *execute it* :fire:. 
+* Run PowerShell **as administrator!**, navigate to the script and :fire: *execute it* :fire: `.\ART-attack.ps1`
     * Ensure that the target VM has internet access as it will download the Invoke-AtomicRedTeam Framework. Furthermore, press [Y] Yes if PowerShell asks for installing additional features.
     * Verify that the powershell logs show successful executions of atomics. (If unsuccessful shut down the VM, revert to the previous snapshot and implement fixes before running the script again.)
     * Do **not close any windows or processes** and proceed to the next step!
