@@ -33,7 +33,7 @@ Write-Host "Location set $path"
 Write-Host "Retrieving Sysmon..."
 
 Invoke-WebRequest -Uri https://download.sysinternals.com/files/Sysmon.zip -Outfile Sysmon.zip
-
+Start-Sleep -s 1
 Write-Host "Sysmon Retrived"
 
 Write-Host "Unzip Sysmon..."
@@ -41,17 +41,18 @@ Write-Host "Unzip Sysmon..."
 Expand-Archive Sysmon.zip
 
 Set-Location $path\Sysmon
-
+Start-Sleep -s 1
 Write-Host "Unzip Complete."
+
 
 Write-Host "Retrieving Configuration File..."
 
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/SwiftOnSecurity/sysmon-config/master/sysmonconfig-export.xml -Outfile sysmonconfig-export.xml
-
+Start-Sleep -s 1
 Write-Host "Configuration File Retrieved."
 
 Write-Host "Installing Sysmon..."
-
+Start-Sleep -s 1
 .\sysmon64.exe -accepteula -i sysmonconfig-export.xml
 
 Write-Host "Sysmon Installed!"
