@@ -27,8 +27,8 @@ The attack script in this repo can be used to create a realistic compromise scen
   * Download: https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
   * Import into VirtualBox and **take a snapshot before the first start**. This allows rolling back after the attack or the VM expired.
   * Start and log in to the VM. Credentials: "IEUser" and "Passw0rd!"
-  * Pause Windows Updates to avoid additional noise: Go to Settings -> Windows Update -> Advanced Options -> Pause updates
-  * Install Sysmon for detailed event logging.
+  * **Pause Windows Updates** to avoid additional noise: Go to Settings -> Windows Update -> Advanced Options -> Pause updates
+  * **Install Sysmon** for detailed event logging.
       * Download the script in `PWF/Install-Sysmon/Install-Sysmon.ps1` onto the system
       * Run PowerShell **as administrator**, navigate to the script and execute it `.\Install-Sysmon.ps1`
   * **Disable all Defender settings**: Before executing the attack, go to "Virus & threat protection settings" -> Manage settings -> Disable all the features
