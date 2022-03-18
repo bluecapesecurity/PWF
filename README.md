@@ -43,11 +43,10 @@ The attack script in this repo can be used to create a realistic compromise scen
     * Do **not close any windows or processes** and proceed to the next step!
 
 ### 2 Disk and Memory - Data Acquisition 
-2.1) Take a snapshot of the target VM while it's running
+2.1) Pause the VM and take a snapshot
 
 2.2) Take an image of the VM memory
 * Create an "evidence" folder on the host system to store the following disk and memory images.
-* In your hypervisor suspend or pause the VM
 
 *VMWare memory acquisition*
   - Open the *.vmwarevm* directory of the VM in a terminal
@@ -59,8 +58,6 @@ The attack script in this repo can be used to create a realistic compromise scen
 * Create a snapshot of the VM's memory: `vboxmanage debugvm <VM_UUID> dumpvmcore --filename win10-mem.raw`
   
 2.3) Take an image of the VM disk
-* Unpause / Resume the VM
-* Shutdown the Windows VM (this ensures updates from memory are written to the  system)
 
 *VMWare disk image acquisition* 
 * Locate the VMDK split files in the VM's directory. These are all files ending with *.vmdk*.
