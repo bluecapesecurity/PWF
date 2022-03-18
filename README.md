@@ -58,6 +58,7 @@ The attack script in this repo can be used to create a realistic compromise scen
 * Create a snapshot of the VM's memory: `vboxmanage debugvm <VM_UUID> dumpvmcore --filename win10-mem.raw`
   
 2.3) Take an image of the VM disk
+* Upause and shut down the VM. 
 
 *VMWare disk image acquisition* 
 * Locate the VMDK split files in the VM's directory. These are all files ending with *.vmdk*.
