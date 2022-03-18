@@ -69,14 +69,13 @@ Start-Sleep -s 2
 
 # defense-evasion
 
-"T1070.004 Atomic Test #6 - Delete a single file - Windows PowerShell"
-# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070.004/T1070.004.md#atomic-test-6---delete-a-single-file---windows-powershell
-Invoke-AtomicTest T1070.004 -TestNumbers 6 -GetPrereqs
-Invoke-AtomicTest T1070.004 -TestNumbers 6]
-
-Start-Sleep -s 2
-
 "T1055.001 Atomic Test #1 - Process Injection via mavinject.exe"
 # https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1055.001/T1055.001.md#atomic-test-1---process-injection-via-mavinjectexe
 Invoke-AtomicTest T1055.001 -TestNumbers 1
 
+Start-Sleep -s 2
+
+"T1070.004 Atomic Test #6 - Delete a single file - Windows PowerShell"
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1070.004/T1070.004.md#atomic-test-6---delete-a-single-file---windows-powershell
+Invoke-AtomicTest T1070.004 -TestNumbers 6 -GetPrereqs
+Invoke-AtomicTest T1070.004 -TestNumbers 6]
