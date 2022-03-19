@@ -89,7 +89,7 @@ The attack script in this repo can be used to create a realistic compromise scen
     * When the Windows system is installed, follow the instructions in the section "Configure the Windows Environment – DFIR Best Practices".
 * When the setup is complete, install the following tools: 
     * Kali Linux subsystem, Volatility
-    * Arsenal Image Mounter, FTK Imager, Eric Zimmerman Tools, RegRipper, EventLog Explorer, Notepad++
+    * Arsenal Image Mounter, FTK Imager, Eric Zimmerman Tools, KAPE, RegRipper, EventLog Explorer, Notepad++
 * Take a snapshot once the setup is complete. 
 
 ### 4 Forensic memory and disk analysis
