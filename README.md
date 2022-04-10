@@ -108,7 +108,7 @@ If you are looking for guidance on digital forensic analysis of Windows systems,
 
 *Early access to the courses and mentoring may be available to the right candidates. Check out and subscribe at [BlueCapeSecurity](https://www.bluecapesecurity.com).*
 
-:fire:**The full course is currently under development**:fire:
+:fire:**The full Practical Windows Forensic course to investigate this scenario is currently under development**:fire:
 
 Happy forensicating!
 
