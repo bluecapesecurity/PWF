@@ -93,7 +93,17 @@ The attack script in this repo can be used to create a realistic compromise scen
 * Take a snapshot once the setup is complete. 
 
 ### 4 Forensic memory and disk analysis
-With the forensic workstation installed and the evidence created, we can now beginn with the analysis of the memory and disk images. If you need guidance on digital forensic analysis of Windows systems, feel free to check out the resources below:
+With the forensic workstation installed and the evidence acquired, we can now beginn with the analysis of the memory and disk images. Some of the forensic artifacts that we want to investigate are:
+
+* User accounts
+* Program execution artifacts
+* Persistence (run keys, scheduled tasks, startup scripts, Windows services)
+* File creation and deletion (NTFS artifacts)
+* PowerShell executions
+* DLL process injection
+* Office document analysis
+
+If you are looking for guidance on digital forensic analysis of Windows systems, feel free to check out the resources below:
 
 
 *Early access to the courses and mentoring may be available to the right candidates. Check out and subscribe at [BlueCapeSecurity](https://www.bluecapesecurity.com).*
