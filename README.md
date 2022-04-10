@@ -114,4 +114,5 @@ Happy forensicating!
 
   
 Copyright © 2022 [BlueCapeSecurity](https://www.bluecapesecurity.com)
-  
+ 
+**Disclaimer: The material is for educational purposes only! I do not assume and hereby disclaim any liability to any party for any errors, disruptions, damages, or other negative consequences resulting from applying the information that I share.**
