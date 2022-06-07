@@ -103,12 +103,13 @@ With the forensic workstation installed and the evidence acquired, we can now be
 * DLL process injection
 * Office document analysis
 
-If you are looking for guidance on digital forensic analysis of Windows systems, feel free to check out the resources below:
+:fire::fire::fire:
 
+**The full 10-hour Practical Windows Forensics course that covers the perparation and the analysis of this material is available at:**
 
-*Early access to the courses and mentoring may be available to the right candidates. Check out and subscribe at [BlueCapeSecurity](https://www.bluecapesecurity.com).*
+**[BlueCapeSecurity](https://www.bluecapesecurity.com)** - *Cyber Security Skills Training & Career Coaching*
 
-:fire:**The full Practical Windows Forensic course to investigate this scenario is currently under development**:fire:
+:fire::fire::fire:
 
 Happy forensicating!
 
