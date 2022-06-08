@@ -84,7 +84,7 @@ The attack script in this repo can be used to create a realistic compromise scen
 ### 3 Set up Your Forensic Workstation
 3.1) Set up a forensic VM as outlined in the following link: https://bluecapesecurity.com/build-your-forensic-workstation/
 * It is recommended to install a Windows 2019 Server VM from the Microsoft Evaluation Center.
-    * Create a new VM in Virtualbox. Assign at least **4 GB of RAM and 80 GB of disk storage with the dynamically allocated option** selected. This means the disk will start small (e.g. basic size of Windows 10-20 GB in size) and grows as we add more data. 
+    * Create a new VM in Virtualbox. Assign at least **4 GB of RAM and 100 GB of disk storage with the dynamically allocated option** selected. This means the disk will start small (e.g. basic size of Windows 10-20 GB in size) and grows as we add more data. 
     * Install VirtualBox Guest Additions and enable shared clipboard and file sharing with the evidence folder on the host system.
     * When the Windows system is installed, follow the instructions in the section "Configure the Windows Environment – DFIR Best Practices".
 * When the setup is complete, install the following tools: 
