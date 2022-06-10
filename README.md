@@ -1,7 +1,17 @@
 # Practical Windows Forensics
+*Provided by Blue Cape Security, LLC*
 
-*A quick DIY purple teaming approach for preparing a Windows system with realistic attack patterns, which can then be used as a specimen to perform a digital forensic investigation of the VM*
+<p align="center">
+  <img src="https://github.com/bluecapesecurity/bluecapesecurity/blob/main/BCS_banner.png" />
+</p>
 
+<div align="center">
+
+ **A quick DIY approach for performing a digital forensic analysis on a Windows 10 system**
+ 
+</div>
+ 
+ ---
 *Steps TLDR:*
 * Prepare a Windows target VM
 * Execute attack script (based on the AtomicRedTeam framework) on target VM
@@ -12,14 +22,28 @@
 Prerequisites:
   * VirtualBox or VMWare hypervisor. See: https://bluecapesecurity.com/build-your-lab/virtualization/
   * Host system requirements: 
-      * Enough RAM for running a Windows VM with 4GB RAM (There are two VMs, but they do not have to run at the same time)
-      * Enough disk storage for 2 x Windows VMs using about 40GB each. Additionally, you'll need around twice the amount for handling disk images, memory images and additional files. Having 100GB+ storage available will be ideal. 
+      * 4GB+ RAM for running Windows VMs (There are two VMs, but they do not have to run at the same time)
+      * Disk storage for 2 x Windows VMs using about 20GB and 40GB, respectively. Additionally, you'll need around 30 GB for handling disk and memory images as well as additional files. 
+  
+  
+<div align="center">
 
-## Investigation Roadmap
+:fire::fire::fire:
+
+**The full 14-hour Practical Windows Forensics (PWF) course that covers the full forensic analysis of this material is available at:**
+
+
+[https://www.bluecapesecurity.com](https://bluecapesecurity.com/courses/practical-windows-forensics/) - *Cyber Security Skills Training & Career Coaching*
+
+ :fire::fire::fire:
+ </div>
+
 ![Investigation Roadmap](Investigation-roadmap.png)
 
+ 
+ ---
 ## Attack Scenario
-The attack script in this repo can be used to create a realistic compromise scenario on a Windows system. It leverages selected Atomic Red Team tests that simulate commonly observed techniques in real world attacks. The script `PWF/AtomicRedTeam/ART-attack.ps1` first installs [Invoke-AtomicRedTeam](https://github.com/redcanaryco/invoke-atomicredteam) and then executes a number of techniques. The techniques executed in this script are highlited the MITRE ATT&CK framwork below.
+The attack simulation script in this repo can be used to create a realistic compromise scenario on a Windows system. It leverages selected Atomic Red Team tests that simulate commonly observed techniques in real world attacks. The script `PWF/AtomicRedTeam/ART-attack.ps1` first installs [Invoke-AtomicRedTeam](https://github.com/redcanaryco/invoke-atomicredteam) and then executes a number of techniques. The techniques executed in this script are highlited the MITRE ATT&CK framwork below.
 
 ![Attack Script](AtomicRedTeam/PWF_Analysis-MITRE.png)
 
@@ -102,18 +126,12 @@ With the forensic workstation installed and the evidence acquired, we can now be
 * PowerShell executions
 * DLL process injection
 * Office document analysis
+* Timeline analysis
 
-:fire::fire::fire:
-
-**The full 10-hour Practical Windows Forensics course that covers the perparation and the analysis of this material is available at:**
-
-**[BlueCapeSecurity](https://www.bluecapesecurity.com)** - *Cyber Security Skills Training & Career Coaching*
-
-:fire::fire::fire:
 
 Happy forensicating!
 
   
 Copyright © 2022 [BlueCapeSecurity](https://www.bluecapesecurity.com)
  
-**Disclaimer: The material is for educational purposes only! I do not assume and hereby disclaim any liability to any party for any errors, disruptions, damages, or other negative consequences resulting from applying the information that I share.**
+Disclaimer: The material is for educational purposes only! I do not assume and hereby disclaim any liability to any party for any errors, disruptions, damages, or other negative consequences resulting from applying the information that I share.
