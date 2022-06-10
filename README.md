@@ -1,10 +1,17 @@
 # Practical Windows Forensics
 *Provided by Blue Cape Security, LLC*
 
-![BCS-logo](https://github.com/bluecapesecurity/bluecapesecurity/blob/main/BCS_banner.png)
+<p align="center">
+  <img src="https://github.com/bluecapesecurity/bluecapesecurity/blob/main/BCS_banner.png" />
+</p>
 
-**A quick DIY approach to perform a forensic analysis on a Windows 10 system**
+<div align="center">
 
+ **A quick DIY approach for performing a digital forensic analysis on a Windows 10 system**
+ 
+</div>
+ 
+ ---
 *Steps TLDR:*
 * Prepare a Windows target VM
 * Execute attack script (based on the AtomicRedTeam framework) on target VM
@@ -17,18 +24,24 @@ Prerequisites:
   * Host system requirements: 
       * 4GB+ RAM for running Windows VMs (There are two VMs, but they do not have to run at the same time)
       * Disk storage for 2 x Windows VMs using about 20GB and 40GB, respectively. Additionally, you'll need around 30 GB for handling disk and memory images as well as additional files. 
+  
+  
+<div align="center">
 
 :fire::fire::fire:
 
 **The full 14-hour Practical Windows Forensics (PWF) course that covers the full forensic analysis of this material is available at:**
 
-**[https://www.bluecapesecurity.com](https://bluecapesecurity.com/courses/practical-windows-forensics/)** - *Cyber Security Skills Training & Career Coaching*
 
-:fire::fire::fire:
+[https://www.bluecapesecurity.com](https://bluecapesecurity.com/courses/practical-windows-forensics/) - *Cyber Security Skills Training & Career Coaching*
 
-## Investigation Roadmap
+ :fire::fire::fire:
+ </div>
+
 ![Investigation Roadmap](Investigation-roadmap.png)
 
+ 
+ ---
 ## Attack Scenario
 The attack simulation script in this repo can be used to create a realistic compromise scenario on a Windows system. It leverages selected Atomic Red Team tests that simulate commonly observed techniques in real world attacks. The script `PWF/AtomicRedTeam/ART-attack.ps1` first installs [Invoke-AtomicRedTeam](https://github.com/redcanaryco/invoke-atomicredteam) and then executes a number of techniques. The techniques executed in this script are highlited the MITRE ATT&CK framwork below.
 
