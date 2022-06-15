@@ -12,7 +12,15 @@
 </div>
  
  ---
-*Steps TLDR:*
+ 
+ 
+
+*Links:*
+- Early-bird registration for the full [14-hour Practical Windows Forensics (PWF) course](https://bluecapesecurity.com/courses/practical-windows-forensics/)
+- Join the [Discord Community](https://discord.gg/94r5j9Vp)
+
+ 
+**Steps TLDR:**
 * Prepare a Windows target VM
 * Execute attack script (based on the AtomicRedTeam framework) on target VM
 * Acquire memory and disk images 
@@ -20,23 +28,12 @@
 * Get started with your Windows forensic analysis
 
 Prerequisites:
-  * VirtualBox or VMWare hypervisor. See: https://bluecapesecurity.com/build-your-lab/virtualization/
+  * [VirtualBox or VMWare hypervisor](https://bluecapesecurity.com/build-your-lab/virtualization/)
   * Host system requirements: 
       * 4GB+ RAM for running Windows VMs (There are two VMs, but they do not have to run at the same time)
       * Disk storage for 2 x Windows VMs using about 20GB and 40GB, respectively. Additionally, you'll need around 30 GB for handling disk and memory images as well as additional files. 
   
-  
-<div align="center">
-
-:fire::fire::fire:
-
-**The full 14-hour Practical Windows Forensics (PWF) course that covers the full forensic analysis of this material is available at:**
-
-
-[https://www.bluecapesecurity.com](https://bluecapesecurity.com/courses/practical-windows-forensics/) - *Cyber Security Skills Training & Career Coaching*
-
- :fire::fire::fire:
- </div>
+ 
 
 ![Investigation Roadmap](Investigation-roadmap.png)
 
@@ -133,5 +130,6 @@ Happy forensicating!
 
   
 Copyright © 2022 [BlueCapeSecurity](https://www.bluecapesecurity.com)
+*Cyber Security Skills Training & Career Coaching*
  
 Disclaimer: The material is for educational purposes only! I do not assume and hereby disclaim any liability to any party for any errors, disruptions, damages, or other negative consequences resulting from applying the information that I share.
