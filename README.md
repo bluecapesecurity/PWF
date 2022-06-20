@@ -16,7 +16,7 @@
  
 
 *Links:*
-- Early-bird registration for the full [14-hour Practical Windows Forensics (PWF) course](https://bluecapesecurity.com/courses/practical-windows-forensics/)
+- Early-bird registration for the full [11-hour Practical Windows Forensics (PWF) course](https://bluecapesecurity.com/courses/practical-windows-forensics/)
 - Join the [Discord Community](https://discord.gg/94r5j9Vp)
 
  
