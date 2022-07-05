@@ -64,14 +64,14 @@ The attack simulation script in this repo can be used to create a realistic comp
     * Do **not close any windows or processes** and proceed to the next step!
 
 ### 2 Disk and Memory - Data Acquisition 
-2.1) Pause the VM and take a snapshot
+2.1) Pause (in VirtualBox) or Suspend (in VMWare) the VM and take a snapshot
 
 2.2) Take an image of the VM memory
 * Create an "evidence" folder on the host system to store the following disk and memory images.
 
 *VMWare memory acquisition*
   - Open the *.vmwarevm* directory of the VM in a terminal
-  - Copy the .vmem file your evidence folder
+  - Copy the .vmem and the associated .vmsn (snapshot) file in your evidence folder
 
 *VirtualBox memory acquisition*
 * Open your terminal (Mac/Linux) or cmd (Windows) to run *vboxmanage* (in Windows it is located under C:\Program Files\Oracle\VirtualBox)
