@@ -2,13 +2,14 @@
 
 #Install Execution Framework and Atomics Folder
 
-Write-Output "Installing invoke-atomicredteam"
+Write-Output "Installing AtomicRedTeam"
 Write-Output "==============================="
-IEX (IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
-Install-AtomicRedTeam -getAtomics -Force
+IEX (IWR 'https://raw.githubusercontent.com/bluecapesecurity/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
+Install-AtomicRedTeam -RepoOwner bluecapesecurity
 
-
-Import-Module "C:\AtomicRedTeam\invoke-atomicredteam\Invoke-AtomicRedTeam.psd1" -Force
+Write-Output "Installing AtomicsFolder"
+IEX (IWR 'https://raw.githubusercontent.com/bluecapesecurity/invoke-atomicredteam/master/install-atomicsfolder.ps1' -UseBasicParsing);
+Install-AtomicsFolder -Force -Branch 724cb3f50dcdd341815d5d2f34cbf90168017404
 
 # Starting atomics attack simulation
 
