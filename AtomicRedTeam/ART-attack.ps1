@@ -7,7 +7,7 @@ Write-Output "==============================="
 IEX (IWR 'https://raw.githubusercontent.com/bluecapesecurity/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);
 Install-AtomicRedTeam -RepoOwner bluecapesecurity
 
-Write-Output "Installing AtomicsFolder"
+Write-Output "Installing AtomicsFolder...this might take a few minutes."
 IEX (IWR 'https://raw.githubusercontent.com/bluecapesecurity/invoke-atomicredteam/master/install-atomicsfolder.ps1' -UseBasicParsing);
 Install-AtomicsFolder -Force -Branch 724cb3f50dcdd341815d5d2f34cbf90168017404
 
