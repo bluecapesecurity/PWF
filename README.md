@@ -47,10 +47,10 @@ The attack simulation script in this repo can be used to create a realistic comp
 
 ## Preparation
 ### 1 Prepare Target System
-1.1) Download, import and configure the free Windows 10 test VM from the Microsoft developer site
-  * Download: https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
-  * Import into VirtualBox and **take a snapshot before the first start**. This allows rolling back after the attack or the VM expired.
-  * Start and log in to the VM. Credentials: "IEUser" and "Passw0rd!"
+1.1) Download, install and configure a free Windows 10 Enterprise Evaluation VM from the Microsoft Evaluation Center
+  * Download x64 ISO: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise
+  * In VirtualBox, create a new VM, import the ISO and run it to install Windows 10 **take a snapshot before the first start**. This allows rolling back after the attack or the VM expired.
+  * **Note:** In the PWF course you will see a Win10 MSEdge developer VM with user "IEUser" pre-configured. This VM is no longer available and thus you need to download and install your own Windows 10 target VM. 
   * **Pause Windows Updates** to avoid additional noise: Go to Settings -> Windows Update -> Advanced Options -> Pause updates
   * **Install Sysmon** for detailed event logging.
       * Download the script in `PWF/Install-Sysmon/Install-Sysmon.ps1` onto the system
