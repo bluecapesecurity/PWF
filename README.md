@@ -49,7 +49,8 @@ The attack simulation script in this repo can be used to create a realistic comp
 ### 1 Prepare Target System
 1.1) Download, install and configure a free Windows 10 Enterprise Evaluation VM from the Microsoft Evaluation Center
   * Download x64 ISO: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise
-  * In VirtualBox, create a new VM, import the ISO and run it to install Windows 10 **take a snapshot before the first start**. This allows rolling back after the attack or the VM expired.
+  * In VirtualBox, create a new VM, import the ISO and run it to install Windows 10.
+  * Take a snapshot once the VM is set up to be able to roll back to a known good state. 
   * **Note:** In the PWF course you will see a Win10 MSEdge developer VM with user "IEUser" pre-configured. This VM is no longer available and thus you need to download and install your own Windows 10 target VM. 
   * **Pause Windows Updates** to avoid additional noise: Go to Settings -> Windows Update -> Advanced Options -> Pause updates
   * **Install Sysmon** for detailed event logging.
