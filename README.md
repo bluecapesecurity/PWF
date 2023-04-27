@@ -19,6 +19,7 @@
 - Check out the full [11-hour Practical Windows Forensics (PWF) course](https://bluecapesecurity.com/courses/practical-windows-forensics/)
 - Join the [Discord Community](https://discord.gg/WKsaGE2CV3)
 - Watch the [PWF intro videos on YouTube](https://youtu.be/JDzJHyBJIXk) 
+- Use the [Practical Windows Forensics - Cheat Sheet](https://github.com/bluecapesecurity/PWF/blob/main/Resources/PracticalWindowsForensics-cheat-sheet.pdf) to guide your investigations.
 
  
 **Steps TLDR:**
