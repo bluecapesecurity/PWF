@@ -1,0 +1,66 @@
+﻿Course Name,Course Section,Learning Objective
+Practical Windows Forensics,Data Collection Process,Forensic Process
+Practical Windows Forensics,Data Collection Process,Data Identification
+Practical Windows Forensics,Data Collection Process,Data Aqcquisition
+Practical Windows Forensics,Data Collection Process,Order of Volatility
+Practical Windows Forensics,Data Collection Process,Verification of Integrity
+Practical Windows Forensics,Data Collection Process,System containment
+Practical Windows Forensics,Data Collection Process,Memory Acquisition
+Practical Windows Forensics,Data Collection Process,Disk Acquisition
+Practical Windows Forensics,Examination,Data Examination Process
+Practical Windows Forensics,Examination,Disk Mounting with Arsenal Image Mounter
+Practical Windows Forensics,Examination,Windows File Artifacts
+Practical Windows Forensics,Examination,Triage Data Collection with KAPE
+Practical Windows Forensics,Examination,Forensic Evidence Sources on Windows
+Practical Windows Forensics,Windows Registry,Windows Registry 
+Practical Windows Forensics,Windows Registry,Registry Analysis with Registry Explorer
+Practical Windows Forensics,Windows Registry,Registry Analysis with RegRipper
+Practical Windows Forensics,Windows Registry,Gathering Windows Sytem Information
+Practical Windows Forensics,Windows Registry,Windows User Accounts
+Practical Windows Forensics,Windows Registry,Windows Profiles
+Practical Windows Forensics,User Behavior Analysis,UserAssist
+Practical Windows Forensics,User Behavior Analysis,RecentDocs
+Practical Windows Forensics,User Behavior Analysis,Shellbags
+Practical Windows Forensics,User Behavior Analysis,Open / Save MRU
+Practical Windows Forensics,User Behavior Analysis,Last Visited Files
+Practical Windows Forensics,File Systems,File Systems
+Practical Windows Forensics,File Systems,Disk Structures
+Practical Windows Forensics,File Systems,NTFS
+Practical Windows Forensics,Master File Table,Master File Table Overview
+Practical Windows Forensics,Master File Table,MFT Analysis with MFTCmd
+Practical Windows Forensics,Master File Table,MACB timestamps
+Practical Windows Forensics,Master File Table,Timestomping
+Practical Windows Forensics,Deleted Files,USN Journal Analysis
+Practical Windows Forensics,Program Execution,Background Activity Moderator (BAM)
+Practical Windows Forensics,Program Execution,ShimCache
+Practical Windows Forensics,Program Execution,Amcache
+Practical Windows Forensics,Program Execution,AmcacheParser Analysis
+Practical Windows Forensics,Program Execution,Windows Prefetch Files
+Practical Windows Forensics,Program Execution,Analysis with PECmd
+Practical Windows Forensics,Program Execution,Windows Prefetch Timeline
+Practical Windows Forensics,Persistence Mechanisms,Run Keys
+Practical Windows Forensics,Persistence Mechanisms,Startup Folder
+Practical Windows Forensics,Persistence Mechanisms,Windows Services
+Practical Windows Forensics,Persistence Mechanisms,Scheduled Tasks
+Practical Windows Forensics,Persistence Mechanisms,Analysis with Autoruns
+Practical Windows Forensics,Event Logs,Analysis with EventLogExplorer
+Practical Windows Forensics,Event Logs,Analysis with EvtxECmd
+Practical Windows Forensics,Event Logs,Defender Events
+Practical Windows Forensics,Event Logs,Malicious Services Installs
+Practical Windows Forensics,Event Logs,Authentication events 
+Practical Windows Forensics,Event Logs,PowerShell events
+Practical Windows Forensics,Event Logs,Sysmon events
+Practical Windows Forensics,Memory Analysis,Memory Analysis Artifacts
+Practical Windows Forensics,Memory Analysis,Analysis with Volatility3
+Practical Windows Forensics,Memory Analysis,Windows Processes
+Practical Windows Forensics,Memory Analysis,Windows DLLs
+Practical Windows Forensics,Memory Analysis,Process Owners
+Practical Windows Forensics,Memory Analysis,Registry Keys
+Practical Windows Forensics,Super Timelines,Disk Conversion with QEMU
+Practical Windows Forensics,Super Timelines,Memory Timeline with Volatility3
+Practical Windows Forensics,Super Timelines,Plaso Tools Log2Timeline
+Practical Windows Forensics,Super Timelines,Merging Timelines
+Practical Windows Forensics,Super Timelines,Body Files
+Practical Windows Forensics,Super Timelines,Super Timeline Creation
+Practical Windows Forensics,Super Timelines,Timline Explorer Analysis
+Practical Windows Forensics,Reporting,Types of Reporting
